@@ -6,5 +6,6 @@
 * Elí García Pérez
 
 ## Paso a Paso:
-**1. SE hecha a andar el contenedor previamente creado en Docker: `docker start -ai hadoop`**
+**1. Se hecha a andar el contenedor previamente creado en Docker: `docker start -ai hadoop`**
+
 **1. Se cambia al directorio de mapreduce con `cd /opt/hadoop/share/hadoop/mapreduce`**
