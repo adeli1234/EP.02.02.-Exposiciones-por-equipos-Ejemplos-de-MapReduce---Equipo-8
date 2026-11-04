@@ -18,8 +18,8 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 
 5. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar randomwriter -D mapreduce.randomwriter.bytespermap=10485760 /tmp/datos_randomwrite`
 
-- **-D**: Limita el tamaño generado por cada tarea Map: ".bytespermap=10485760", se limita a 10MB.
-- **/tmp/datos**: Se guarda en una carpeta creada en el momento llamada "datos_randomwrite" (entrada).
+    - **-D**: Limita el tamaño generado por cada tarea Map: ".bytespermap=10485760", se limita a 10MB.
+    - **/tmp/datos**: Se guarda en una carpeta creada en el momento llamada "datos_randomwrite" (entrada).
 
 6. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/datos_randomwrite`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: `head -n 20 /tmp/datos_randomwrite/part-m-00000`
 
