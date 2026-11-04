@@ -10,8 +10,10 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 
 **1. Se hecha a andar el contenedor previamente creado en Docker: 💻 `docker start -ai hadoop`**
 
-**2. Se entra como *root*. Se tiene que cambiar al usuario de Hadoop: 🐳 `su - hadoop`**
+**2. Se entra como *root*. Se tiene que cambiar al usuario de Hadoop: 🐳 `su - hadoop`; al final se tiene que ver `hadoop@hadoop: ~$`**
 
 **3. Se verifica que el contenedor este existente y encendido: 💻 `docker ps -a`; se debe de leer "Up" debajo de STATUS si es que está encendido, "Excited" si está apagado.**
 
 **4. Se cambia al directorio de mapreduce: 🐳 `cd /opt/hadoop/share/hadoop/mapreduce`**
+
+**5. 
