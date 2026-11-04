@@ -25,7 +25,7 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 
 7. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar sort /tmp/datos_randomwrite /tmp/resultados_randomwrite`
 
-- **sort /tmp/datos /tmp/resultados**: Toma los datos de "entrada" (/datos) que se generaron con 'randomwriter' y los ordena con 'sort' como datos de salida (/resultados_randomwrite).
+    - **sort /tmp/datos /tmp/resultados**: Toma los datos de "entrada" (/datos) que se generaron con 'randomwriter' y los ordena con 'sort' como datos de salida (/resultados_randomwrite).
 
 9. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/resultados_randomwrite`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: `head -n 20 /tmp/resultados_randomwrite/part-m-00000`
 
