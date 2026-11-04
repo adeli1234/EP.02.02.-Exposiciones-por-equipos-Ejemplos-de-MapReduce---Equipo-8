@@ -32,8 +32,8 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 9. Se verifica que se hayan generado los archivos de salida correctamente: 🐳 `ls /tmp/resultados_randomwrite`
 
 10. Se transfieren los resultados de las carpetas a la carpeta deseada, en este caso sería dentro del repositorio de GitHub con la carpeta de "/datos_randomwrite" y "/resultados_randomwrite" ya creadas previamente.
-    - 💻 `docker cp hadoop:/tmp/resultados/part-m-00000 ./datos_randomwrite/`
-    - 💻 `docker cp hadoop:/tmp/resultados/part-m-00000 ./resultados_randomwrite/`
+    - 💻 `docker cp hadoop:/tmp/datos_randomwrite/part-m-00000 ./datos_randomwrite/`
+    - 💻 `docker cp hadoop:/tmp/resultados_randomwrite/part-m-00000 ./resultados_randomwrite/`
 
 ---
 
@@ -55,14 +55,14 @@ En este caso se desarrolla casi lo mismo, se genera un archivo con elementos ale
 
 6. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/datos_randomtext`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: 🐳 `head -n 20 /tmp/datos_randomtext/part-m-00000`
 
-7. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar sort /tmp/datos_randomtext /tmp/resultados_randomtext`
+7. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar sort -outKey org.apache.hadoop.io.Text -outValue org.apache.hadoop.io.Text /tmp/datos_randomtext /tmp/resultados_randomtext`
 
-    - **sort /tmp/datos_randomtext /tmp/resultados_randomtext**: Toma los datos de "entrada" (/datos) que se generaron con 'randomwriter' y los ordena con 'sort' como datos de salida (/resultados_randomwrite).
+    - **sort /tmp/datos_randomtext /tmp/resultados_randomtext**: Toma los datos de "entrada" (/datos) que se generaron con 'randomtextwriter' y los ordena con 'sort' como datos de salida (/resultados_randomwrite), especificando el tipo de dato mandando a llamar una clase.
 
 9. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/resultados_randomtext`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: 🐳 `head -n 20 /tmp/resultados_randomtext/part-m-00000`
 
 9. Se verifica que se hayan generado los archivos de salida correctamente: 🐳 `ls /tmp/resultados_randomtext`
 
 10. Se transfieren los resultados de las carpetas a la carpeta deseada, en este caso sería dentro del repositorio de GitHub con la carpeta de "/datos_randomwrite" y "/resultados_randomwrite" ya creadas previamente.
-    - 💻 `docker cp hadoop:/tmp/resultados/part-m-00000 ./datos_randomtext/`
-    - 💻 `docker cp hadoop:/tmp/resultados/part-m-00000 ./resultados_randomtext/`
+    - 💻 `docker cp hadoop:/tmp/datos_randomtext/part-m-00000 ./datos_randomtext/`
+    - 💻 `docker cp hadoop:/tmp/resultados_randomtext/part-m-00000 ./resultados_randomtext/`
