@@ -6,6 +6,7 @@ Aplicar los comandos de `randomtextwriter` y `sort` para generar un conjunto de 
 ## Requisitos y Parámetros
 * **Tamaño deseado:** 5 MB (5,242,880 bytes).
 * **Ruta de entrada (generación):** `/tmp/ejercicio_entrada`
+* **Ruta de salida (ordenado):** `/tmp/ejercicio_salida`
 
 ## Instrucciones para el alumno
 1. Ubícate en el directorio `/opt/hadoop/share/hadoop/mapreduce` dentro del contenedor de Hadoop.

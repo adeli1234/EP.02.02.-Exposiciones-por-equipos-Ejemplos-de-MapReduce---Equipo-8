@@ -14,4 +14,4 @@ ls /tmp/ejercicio_salida
 
 ### ¿Cómo darle permisos al `.sh` antes de subirlo a Git?
 En la terminal de tu máquina (VS Code), otorga permisos de ejecución al script antes de hacer el commit:
-```bash
+```
