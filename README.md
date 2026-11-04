@@ -16,4 +16,10 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 
 **4. Se cambia al directorio de mapreduce: 🐳 `cd /opt/hadoop/share/hadoop/mapreduce`**
 
-**5. 
+**5. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar randomtextwriter -D mapreduce.randomtextwriter.bytespermap=10485760 /tmp/datos`**
+
+    -**-D**: Limita el tamaño generado por cada tarea Map: ".bytespermap=10485760", se limita a 10MB.
+
+**6. Se crea una carpeta donde se introducirán los datos de salida, en este caso será llamada "resultados": 🐳 `mkdir /tmp/resultados`**
+
+**7. ``**
