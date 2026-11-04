@@ -19,7 +19,10 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 **5. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar randomtextwriter -D mapreduce.randomtextwriter.bytespermap=10485760 /tmp/datos`**
 
 - **-D**: Limita el tamaño generado por cada tarea Map: ".bytespermap=10485760", se limita a 10MB.
+- **/tmp/datos**: Se guarda en una carpeta creada en el momento llamada "datos" (entrada).
 
-**6. Se crea una carpeta donde se introducirán los datos de salida, en este caso será llamada "resultados": 🐳 `mkdir /tmp/resultados`**
+**6. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar sort /tmp/datos /tmp/resultados`**
 
-**7. ``**
+- **sort /tmp/datos /tmp/resultados**: Toma los datos de "entrada" (/datos) que se generaron con 'randomtextwriter' y los ordena con 'sort' como datos de salida (/resultados).
+
+**7. Se verifica que se hayan generado los archivos de salida correctamente``**
