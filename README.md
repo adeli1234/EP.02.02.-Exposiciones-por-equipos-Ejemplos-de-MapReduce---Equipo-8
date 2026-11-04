@@ -1,10 +1,36 @@
 # EP.02.02.-Exposiciones-por-equipos-Ejemplos-de-MapReduce---Equipo-8
-
+---
 ## Equipo 8:
 * Jethro Ivann Valle Gomez
 * Juan Pedro Carapia Rocha
 * Elí García Pérez
+---
+## Descripción
+EL tema abarca una función de Hadoop que sirve para la generación aleatoria de datos y su ordenamiento:
+* **`randomwriter` / `randomtextwriter`**: Herramientas que generan grandes volúmenes de datos aleatorios (binarios o de texto plano) estructurados sin requerir archivos de entrada previos
+* **`sort`**: Algoritmo MapReduce que toma una carpeta con datos no ordenados y aprovecha la arquitectura distribuida de Hadoop para ordenarlos completamente por clave (ID).
+---
+## Caso de Uso Real
+* **Pruebas de Rendimiento (Benchmarking):** Medir la capacidad de procesamiento de entrada/salida (I/O) y de red de un clúster Hadoop antes de ponerlo en producción.
+* **Pipelines ETL(Extract, Transform, Load) Masivos:** Simulación de escenarios reales en los que se ingieren datos desordenados en un Data Lake y requieren ser estructurados y ordenados cronológicamente o por identificador único antes de ser indexados en bases de datos NoSQL (como HBase o Cassandra) o procesados por motores de búsqueda.
+---
+## Requisitos
+1. Contenedor de Docker con **Hadoop 3.3.6** en funcionamiento (Se debe tener una imagen de Debian:12).
+2. Sesión activa en el contenedor con el usuario `hadoop`.
+3. Estar ubicado en el directorio `/opt/hadoop/share/hadoop/mapreduce`.
+---
+## Resultado Esperado
 
+Si el proceso finaliza con éxito, al consultar la carpeta de salida con `ls /tmp/resultados` se deben observar dos archivos principales:
+
+1. **`_SUCCESS`**: Archivo vacío que confirma que el trabajo de MapReduce completó sin errores[cite: 2, 3].
+2. **`part-m-00000`** (o **`part-r-00000`**): Archivo que contiene los datos generados u ordenados[cite: 2, 3].
+
+Para verificar que el contenido del archivo generado/ordenado no está vacío, se ejecuta:
+```bash
+head -n 20 /tmp/resultados/part-m-00000
+```
+---
 ## Paso a Paso (RandomWriter y Sort):
 Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en donde se tiene que reproducir (💻 - Computadora, 🐳 - Contenedor).
 
