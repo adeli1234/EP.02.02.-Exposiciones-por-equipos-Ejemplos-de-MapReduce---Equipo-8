@@ -31,3 +31,6 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
 
 9. Se verifica que se hayan generado los archivos de salida correctamente: `ls /tmp/resultados_randomwrite`
 
+10. Se transfieren los resultados de las carpetas a la carpeta deseada, en este caso sería dentro del repositorio de GitHub con la carpeta de "/datos_randomwrite" y "/resultados_randomwrite" ya creadas previamente.
+    - `docker cp hadoop:/tmp/resultados/part-m-00000 ./datos_randomwrite/`
+    - `docker cp hadoop:/tmp/resultados/part-m-00000 ./resultados_randomwrite/`
