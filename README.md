@@ -21,16 +21,16 @@ Antes de ejecutar cualquier comando se debe verificar que se sepa el lugar en do
     - **-D**: Limita el tamaño generado por cada tarea Map: ".bytespermap=10485760", se limita a 10MB.
     - **/tmp/datos**: Se guarda en una carpeta creada en el momento llamada "datos_randomwrite" (entrada).
 
-6. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/datos_randomwrite`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: `head -n 20 /tmp/datos_randomwrite/part-m-00000`
+6. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/datos_randomwrite`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: 🐳 `head -n 20 /tmp/datos_randomwrite/part-m-00000`
 
 7. Se ejecuta el comando: 🐳 `hadoop jar hadoop-mapreduce-examples-3.3.6.jar sort /tmp/datos_randomwrite /tmp/resultados_randomwrite`
 
     - **sort /tmp/datos /tmp/resultados**: Toma los datos de "entrada" (/datos) que se generaron con 'randomwriter' y los ordena con 'sort' como datos de salida (/resultados_randomwrite).
 
-9. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/resultados_randomwrite`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: `head -n 20 /tmp/resultados_randomwrite/part-m-00000`
+9. Se debe asegurar que la operación fuese exitosa: 🐳 `ls /tmp/resultados_randomwrite`. Si lo fue debe de salir este mensaje "**_SUCCESS  part-m-00000**". Se puede ver el archivo generado con: 🐳 `head -n 20 /tmp/resultados_randomwrite/part-m-00000`
 
-9. Se verifica que se hayan generado los archivos de salida correctamente: `ls /tmp/resultados_randomwrite`
+9. Se verifica que se hayan generado los archivos de salida correctamente: 🐳 `ls /tmp/resultados_randomwrite`
 
 10. Se transfieren los resultados de las carpetas a la carpeta deseada, en este caso sería dentro del repositorio de GitHub con la carpeta de "/datos_randomwrite" y "/resultados_randomwrite" ya creadas previamente.
-    - `docker cp hadoop:/tmp/resultados/part-m-00000 ./datos_randomwrite/`
-    - `docker cp hadoop:/tmp/resultados/part-m-00000 ./resultados_randomwrite/`
+    - 💻 `docker cp hadoop:/tmp/resultados/part-m-00000 ./datos_randomwrite/`
+    - 💻 `docker cp hadoop:/tmp/resultados/part-m-00000 ./resultados_randomwrite/`
